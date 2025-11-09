@@ -31,9 +31,11 @@ mongod --dbpath <your-db-path>
 
 # Verify setup
 python -m queuectl.cli ping
-
+```
 ---
 
+## ⚙️ **Usage example**
+```bash
 # Enqueue a job
 python -m queuectl.cli enqueue '{"id":"job10","command":"cmd /C echo Hello QueueCTL"}'
 
