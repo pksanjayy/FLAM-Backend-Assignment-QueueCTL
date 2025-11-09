@@ -61,3 +61,14 @@ python -m queuectl.cli worker-stop
 python -m queuectl.cli config get
 python -m queuectl.cli config set max_retries 5
 python -m queuectl.cli config set backoff_base 3
+```
+---
+## **Architecture Overview**
+
+- QueueCTL follows a modular, event-driven architecture:
+- Job Queue (jobs collection) — Stores all job documents with metadata like command, state, attempts, timestamps, etc.
+- Worker Process (worker.py) — Continuously polls pending jobs, executes them, and updates their state based on success or failure.
+- Retry Mechanism — Failed jobs retry automatically using exponential backoff (delay = base ^ attempts).
+- Dead Letter Queue (dlq collection) — Stores permanently failed jobs after exceeding retry limits.
+- Config Management (config collection) — Allows runtime configuration of retry counts and backoff base.
+- PID Manager — Tracks active workers and enables graceful shutdowns across multiple worker processes.
