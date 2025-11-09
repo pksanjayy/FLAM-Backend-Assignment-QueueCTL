@@ -4,6 +4,12 @@ QueueCTL is a lightweight CLI-based background job queue system built with Pytho
 It supports retries with exponential backoff, a Dead Letter Queue (DLQ) for failed jobs, and persistent storage for reliable background processing.
 
 ---
+## 🎥 **Demo Video**
+
+Watch the project in action 
+[![QueueCTL Demo](https://drive.google.com/file/d/1L5I0zfSzV5WsgfyFbbzswpg0_DnI3sa5/view?usp=drivesdk)
+
+---
 
 ## **Features**
 - CLI-based job management (`enqueue`, `status`, `worker-start`, `dlq list`)
@@ -78,7 +84,7 @@ python -m queuectl.cli config set backoff_base 3
 ### **System Architecture Diagram**
 Below is a high-level view of QueueCTL’s components and their interactions:
 
-![QueueCTL Architecture Overview](https://github.com/pksanjayy/FLAM-Backend-Assignment-QueueCTL/blob/main/architecture.png)
+![QueueCTL Architecture Overview](https://drive.google.com/file/d/1CFRg86IRogPv1hGmcxkxdg5uMCelEkH0/view?usp=drivesdk)
 
 
 ---
