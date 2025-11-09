@@ -7,7 +7,7 @@ It supports retries with exponential backoff, a Dead Letter Queue (DLQ) for fail
 ## 🎥 **Demo Video**
 
 Watch the project in action 
-[![QueueCTL Demo](https://drive.google.com/file/d/1L5I0zfSzV5WsgfyFbbzswpg0_DnI3sa5/view?usp=drivesdk)
+[![QueueCTL Demo](https://drive.google.com/file/d/1L5I0zfSzV5WsgfyFbbzswpg0_DnI3sa5/view?usp=drive_link)
 
 ---
 
