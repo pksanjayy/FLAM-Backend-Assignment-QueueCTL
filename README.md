@@ -34,9 +34,6 @@ python -m queuectl.cli ping
 
 ---
 
-## ⚙️ **Usage examples**
-
-```bash
 # Enqueue a job
 python -m queuectl.cli enqueue '{"id":"job10","command":"cmd /C echo Hello QueueCTL"}'
 
@@ -58,10 +55,7 @@ python -m queuectl.cli dlq retry job1
 # Stop workers
 python -m queuectl.cli worker-stop
 
-# Config Management
+# Configuration management
 python -m queuectl.cli config get
 python -m queuectl.cli config set max_retries 5
 python -m queuectl.cli config set backoff_base 3
-
----
-
