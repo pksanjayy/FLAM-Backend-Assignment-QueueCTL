@@ -72,3 +72,45 @@ python -m queuectl.cli config set backoff_base 3
 - Dead Letter Queue (dlq collection) — Stores permanently failed jobs after exceeding retry limits.
 - Config Management (config collection) — Allows runtime configuration of retry counts and backoff base.
 - PID Manager — Tracks active workers and enables graceful shutdowns across multiple worker processes.
+
+---
+## **Assumptions & Trade-offs**
+
+- MongoDB is used for simplicity and durability; Redis could be used for higher throughput.
+- Worker polling interval is fixed (can be optimized with event triggers).
+- Commands are executed via the system shell (subprocess).
+- No job priority queue implemented (kept simple for clarity).
+- Focused on reliability and concurrency, not scheduling (cron-like).
+
+---
+## **Testing Instructions**
+```bash
+# Start MongoDB
+mongod
+
+# Enqueue jobs
+python -m queuectl.cli enqueue '{"id":"job2","command":"cmd /C echo Testing Queue"}'
+
+# Start a worker and observe
+python -m queuectl.cli worker-start --count 1
+
+# Simulate a failure (invalid command)
+python -m queuectl.cli enqueue '{"id":"failjob","command":"invalidcommand"}'
+
+# Check job states
+python -m queuectl.cli status
+
+# Retry failed DLQ jobs
+python -m queuectl.cli dlq retry failjob
+
+```
+---
+## **Technologies Used**
+
+- Python 3.13
+- MongoDB (Persistent storage)
+- Click (CLI framework)
+- Multiprocessing (Parallel worker execution)
+- psutil (Process management)
+
+---
