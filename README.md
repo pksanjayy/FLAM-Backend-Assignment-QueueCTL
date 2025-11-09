@@ -5,10 +5,8 @@ It supports retries with exponential backoff, a Dead Letter Queue (DLQ) for fail
 
 ---
 ## 🎥 **Demo Video**
-
-## 🎥 Demo Video  
 Watch the full project demo here:  
-👉 [View on Google Drive](https://drive.google.com/file/d/1L5I0zfSzV5WsgfyFbbzswpg0_DnI3sa5/view?usp=drive_link)
+[View on Google Drive](https://drive.google.com/file/d/1L5I0zfSzV5WsgfyFbbzswpg0_DnI3sa5/view?usp=drive_link)
 
 ---
 
@@ -85,7 +83,7 @@ python -m queuectl.cli config set backoff_base 3
 ### **System Architecture Diagram**
 Below is a high-level view of QueueCTL’s components and their interactions:
 
-![QueueCTL Architecture Overview](https://drive.google.com/file/d/1CFRg86IRogPv1hGmcxkxdg5uMCelEkH0/view?usp=drivesdk)
+![QueueCTL Architecture Overview](https://drive.google.com/file/d/1CFRg86IRogPv1hGmcxkxdg5uMCelEkH0/view?usp=sharing)
 
 
 ---
