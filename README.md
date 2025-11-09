@@ -83,8 +83,7 @@ python -m queuectl.cli config set backoff_base 3
 ### **System Architecture Diagram**
 Below is a high-level view of QueueCTL’s components and their interactions:
 
-![QueueCTL Architecture Overview](https://drive.google.com/file/d/1CFRg86IRogPv1hGmcxkxdg5uMCelEkH0/view?usp=sharing)
-
+![QueueCTL Architecture Overview](https://drive.google.com/uc?export=view&id=1CFRg86IRogPv1hGmcxkxdg5uMCelEkH0)
 
 ---
 ## **Assumptions & Trade-offs**
