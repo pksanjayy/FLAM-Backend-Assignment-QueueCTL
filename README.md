@@ -71,20 +71,11 @@ python -m queuectl.cli config set backoff_base 3
 - Retry Mechanism — Failed jobs retry automatically using exponential backoff (delay = base ^ attempts).
 - Dead Letter Queue (dlq collection) — Stores permanently failed jobs after exceeding retry limits.
 - Config Management (config collection) — Allows runtime configuration of retry counts and backoff base.
-- PID Manager — Tracks active workers and enables graceful shutdowns across multiple worker processes.
-
-QueueCTL follows a modular, event-driven architecture:
-
-1. **Job Queue (`jobs` collection)** — Stores job details like command, state, attempts, timestamps, etc.  
-2. **Worker Process (`worker.py`)** — Continuously polls and executes pending jobs.  
-3. **Retry Mechanism** — Failed jobs retry automatically using exponential backoff (`delay = base ^ attempts`).  
-4. **Dead Letter Queue (`dlq` collection)** — Stores permanently failed jobs after exceeding retry limits.  
-5. **Config Management (`config` collection)** — Allows dynamic configuration of retry count and backoff base.  
-6. **PID Manager** — Tracks active workers and ensures graceful shutdown.
+- PID Manager — Tracks active workers and enables graceful shutdowns across multiple worker processes
 
 ---
 
-### 🏗️ **System Architecture Diagram**
+### **System Architecture Diagram**
 Below is a high-level view of QueueCTL’s components and their interactions:
 
 ![QueueCTL Architecture Overview](https://github.com/pksanjayy/FLAM-Backend-Assignment-QueueCTL/blob/main/architecture.png)
