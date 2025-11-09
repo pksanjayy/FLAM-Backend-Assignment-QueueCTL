@@ -31,3 +31,35 @@ mongod --dbpath <your-db-path>
 
 # Verify setup
 python -m queuectl.cli ping
+
+---
+
+## ⚙️ **Usage examples**
+
+```bash
+# Enqueue a job
+python -m queuectl.cli enqueue '{"id":"job10","command":"cmd /C echo Hello QueueCTL"}'
+
+# Start a worker
+python -m queuectl.cli worker-start --count 1
+
+# Check job status
+python -m queuectl.cli status
+
+# List completed jobs
+python -m queuectl.cli list --state completed
+
+# View failed jobs (DLQ)
+python -m queuectl.cli dlq list
+
+# Retry a DLQ job
+python -m queuectl.cli dlq retry job1
+
+# Stop workers
+python -m queuectl.cli worker-stop
+
+# Config Management
+python -m queuectl.cli config get
+python -m queuectl.cli config set max_retries 5
+python -m queuectl.cli config set backoff_base 3
+
